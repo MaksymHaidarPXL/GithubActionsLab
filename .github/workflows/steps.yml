@@ -1,0 +1,21 @@
+name: Steps Examples
+
+on:
+  workflow_dispatch:
+
+jobs:
+  steps-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create testmachine directory
+        run: mkdir testmachine
+
+      - name: Save system information
+        run: uname -a > testmachine/output.txt
+
+      - name: Show output.txt contents
+        run: cat testmachine/output.txt
+
+      - name: List directories and contents
+        run: ls -alhR
