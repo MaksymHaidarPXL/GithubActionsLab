@@ -1,0 +1,21 @@
+name: Files Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  files-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create directory
+        run: mkdir testdirectory
+
+      - name: Create text file
+        run: echo "Hello from GitHub Actions!" > testdirectory/hello.txt
+
+      - name: Show directory contents
+        run: ls -alhR testdirectory
+
+      - name: Show file contents
+        run: cat testdirectory/hello.txt
